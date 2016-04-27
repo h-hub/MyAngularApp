@@ -1,0 +1,30 @@
+{
+  "name": "course-manage.server",
+  "version": "1.0.0",
+  "plugin": {
+    "name": "course-manage",
+    "prefix": "/course-manage",
+    "runner": "app",
+    "appOrder": 2,
+    "envConfig": "../../home/server/api/config/env-properties.js"
+  },
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "",
+    "postupdate": ""
+  },
+  "author": "Tangerine",
+  "license": "ISC",
+  "devDependencies": {
+    "compression": "^1.6.1",
+    "express": "^4.13.3",
+    "url": "^0.11.0",
+    "hapi": "8.6.1",
+    "handlebars": "2.0.0"
+  },
+  "dependencies": {
+    "express-handlebars": "^3.0.0"
+  }
+}

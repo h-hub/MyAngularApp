@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="course-manage" class="crs-mgr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Course Manage</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="course-manage/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="course-manage/bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="navigation/assets/styles/top-nav.min.css" />
+    <link rel="stylesheet" href="course-manage/assets/css/layout-{{ package.version }}.min.css" />
+    <link rel="stylesheet" href="course-manage/assets/css/datepicker.css" />
+
+    <!--<link rel="stylesheet" href="top-nav/assets/style/top-nav.min.css"/>-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var manageCourse = {
+            package : {
+                version : '{{ package.version }}',
+            },
+            url : {
+                api : '{{ url.api }}',
+                catalog : '{{ url.catalog }}'
+            },
+            session : {
+                ttl : parseInt('{{ session.ttl }}')
+            },
+            profile : {
+                role: '{{ profile.role }}',
+                market:  '{{ profile.market }}'
+            },
+            markets : {
+                US : '{{ markets.US }}',
+                AUSTRALIA : '{{ markets.AUSTRALIA }}',
+                ME : '{{ markets.ME }}',
+                NON_US : '{{ markets.NON_US }}'
+            }
+        };
+    </script>
+    <script type="text/javascript" src="assets/js/ga.js"></script>
+</head>
+
+<body class="crs-mgr body" ng-controller="SessionController" >
+    <notification-panel></notification-panel>
+    <top-navigation ng-if="showNavigation"></top-navigation>
+    <div class="crs-mgr outerContainer">
+        <ng-view autoscroll="true" role="main"></ng-view>
+    </div>
+    <common-footer role="contentinfo"></common-footer>
+
+    <script type="text/javascript" src="course-manage/bower_components/jquery/dist/jquery-min.js"></script>
+    <script type="text/javascript" src="course-manage/bower_components/angular/angular-min.js"></script>
+    <script type="text/javascript" src="course-manage/bower_components/angular-animate/angular-animate-min.js"></script>
+    <script type="text/javascript" src="course-manage/bower_components/angular-route/angular-route-min.js"></script>
+    <script type="text/javascript" src="course-manage/bower_components/bootstrap/dist/js/bootstrap-min.js"></script>
+    <script type="text/javascript" src="course-manage/assets/js/application-{{ package.version }}-min.js"></script>
+    <script type="text/javascript" src="course-manage/assets/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="course-manage/assets/js/manage-course-{{ package.version }}-min.js"></script>
+    <script type="text/javascript" src="course-manage/assets/templates/templates-{{ package.version }}.js"></script>
+
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+    <script type="text/javascript" src="navigation/assets/js/top-nav-min.js"></script>
+    <script type="text/javascript" src="navigation/assets/js/top-nav-app-min.js"></script>
+    <script type="text/javascript" src="navigation/assets/templates/templates.js"></script>
+</body>
+
+</html>
